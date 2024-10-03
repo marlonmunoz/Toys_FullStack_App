@@ -1,13 +1,13 @@
 # FULLSTACK-APP
 # SETUP
 Below is the set up commands in order to run the fullstack up
-## Backend
+## Backend - Flask: Python
 1. To activete the Backend, run the followig commands:
 
 - `cd server`
 - `python app.py`
 
-## Frontend
+## Frontend - React: JavaScript
 2. To activate the Frontend, run the following command:
 
 - `cd src`
