@@ -14,6 +14,21 @@ convention = {
 metadata = MetaData()
 db = SQLAlchemy(metadata=metadata)
 
+
+class Category(db.Model, SerializerMixin):
+    __tablename__ = 'categories'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+
+    toy = db.relationship('Toy', back_populates='category')
+
+    serialize_rules = ('-toys',)
+
+    def __repr__(self):
+        return f'<Category: {self.name}>'
+    
+  
 class Toy(db.Model, SerializerMixin):
     __tablename__ = 'toys'
 
@@ -32,23 +47,6 @@ class Toy(db.Model, SerializerMixin):
     def __repr__(self):
         return f'<Toy: {self.name}, {self.image}, {self.age}, {self.price}, {self.description}>'
 
-
-class Category(db.Model, SerializerMixin):
-    __tablename__ = 'categories'
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
-
-    toy = db.relationship('Toy', back_populates='category')
-
-    serialize_rules = ('-toys',)
-
-
-    def __repr__(self):
-        return f'<Category: {self.name}>'
-    
-  
-    
 
 
     
