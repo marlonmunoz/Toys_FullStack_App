@@ -11,22 +11,12 @@ function App() {
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [selectedAge, setSelectedAge] = useState("all"); // State to store the selected age
 
-  // useEffect(() => {  // Fetch the toys from the API               
-  //   fetch("http://localhost:5000/toys")  
-  //     .then(response => response.json())  // Parse the JSON data
-  //     .then(data => setToys(data)); // Set the toys in the state
-  // }, []);  // Empty dependency array to run the effect only once
   useEffect(() => {  // Fetch the toys from the API               
     fetch("http://localhost:5000/toys")  
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })  // Parse the JSON data
-      .then(data => setToys(data)) // Set the toys in the state
-      .catch(error => console.error('Fetch error:', error)); // Log any errors
+      .then(response => response.json())  // Parse the JSON data
+      .then(data => setToys(data)); // Set the toys in the state
   }, []);  // Empty dependency array to run the effect only once
+  
 
 
 

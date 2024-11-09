@@ -1,4 +1,3 @@
-import { useOutletContext } from "react-router-dom";
 import LikeButton from "./LikeButton";
 
 function Toy({ toy, deleteToy }) {
