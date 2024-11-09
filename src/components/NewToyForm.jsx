@@ -23,7 +23,7 @@ import { useState } from "react";
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5000/toys', {
+        fetch('http://localhost:3000/toys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
