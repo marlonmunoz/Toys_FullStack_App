@@ -13,7 +13,7 @@ Below is the set up commands in order to run the fullstack App. Add commands in 
 
 ## Frontend - React: JavaScript
 2. To activate the Frontend, run the following commands:
-
+- `npm run server` will allow access to recources in port 4000/toys
 - `cd src`
 - `npm start`
 
