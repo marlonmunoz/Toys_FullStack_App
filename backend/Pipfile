@@ -10,6 +10,7 @@ sqlalchemy-serializer = "*"
 flask-serializer = "*"
 flask = "*"
 flask-cors = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
