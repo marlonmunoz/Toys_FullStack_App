@@ -11,11 +11,19 @@ function App() {
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [selectedAge, setSelectedAge] = useState("all"); // State to store the selected age
 
-  useEffect(() => {  // Fetch the toys from the API               
-    fetch("http://localhost:5000/toys")  
-      .then(response => response.json())  // Parse the JSON data
-      .then(data => setToys(data)); // Set the toys in the state
-  }, []);  // Empty dependency array to run the effect only once
+//   useEffect(() => {  // Fetch the toys from the API               
+//     fetch("http://localhost:5000/toys")  
+//       .then(response => response.json())  // Parse the JSON data
+//       .then(data => setToys(data)); // Set the toys in the state
+//   }, []);  // Empty dependency array to run the effect only once
+
+    useEffect(() => {  // Fetch the toys from the API               
+      fetch("http://localhost:5000/toys", {
+        mode: 'cors'
+      })  
+        .then(response => response.json())  // Parse the JSON data
+        .then(data => setToys(data)); // Set the toys in the state
+    }, []);  // Empty dependency array to run the effect only once
 
   const filteredToysByAge = selectedAge === "all" ? toys : toys.filter(toy => toy.age === selectedAge);// Filter the toys by age   
   const filteredToys = filteredToysByAge.filter(toy => { // Filter the toys by search text
