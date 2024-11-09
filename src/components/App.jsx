@@ -16,11 +16,6 @@ function App() {
       .then(response => response.json())  // Parse the JSON data
       .then(data => setToys(data)); // Set the toys in the state
   }, []);  // Empty dependency array to run the effect only once
-  
-
-
-
-  
 
   const filteredToysByAge = selectedAge === "all" ? toys : toys.filter(toy => toy.age === selectedAge);// Filter the toys by age   
   const filteredToys = filteredToysByAge.filter(toy => { // Filter the toys by search text
