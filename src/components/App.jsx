@@ -18,7 +18,7 @@ function App() {
 //   }, []);  // Empty dependency array to run the effect only once
 
     useEffect(() => {  // Fetch the toys from the API               
-      fetch("http://localhost:4000/toys", {
+      fetch("http://localhost:5001/toys", {
         mode: 'cors'
       })  
         .then(response => response.json())  // Parse the JSON data
@@ -60,7 +60,7 @@ function App() {
       body: JSON.stringify(newToy)
     };
   
-    fetch("http://localhost:4000/toys", configObj)
+    fetch("http://localhost:5001/toys", configObj)
       .then(response => response.json())
       .then(newToyData => {
         setToys([...toys, newToyData]); // Add the new toy to the state
